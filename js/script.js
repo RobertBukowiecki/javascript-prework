@@ -34,14 +34,22 @@ function playGame(playerInput) {
       printMessage('Ty wygrywasz!');
     } else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
       printMessage('Ty wygrywasz!');
-    } else if( argComputerMove == argPlayerMove){
-      printMessage('Remis!');
+    // } else if( argComputerMove == argPlayerMove){
+    //   printMessage('Remis!');
     } else {
       printMessage('Tym razem przegrywasz :(');
     }
   }
 
+  if (argComputerMove != argPlayerMove) {
+
   displayResult(argComputerMove, argPlayerMove);
+  }
+
+  if (argComputerMove == argPlayerMove) {
+    printMessage('We dwójke zagraliśmy ' + argPlayerMove);
+  printMessage('Mamy remis!');
+  }
 
   console.log('moves:', argComputerMove, argPlayerMove);
 
@@ -58,3 +66,11 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
   playGame(3);
 });
+
+(document).ready(function() {
+  ('#messages').active(function() {
+    $('button').css('background-color', 'blue')},
+    function(){
+    ('button').css('background-color', '')
+    })
+})

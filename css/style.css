@@ -1,0 +1,76 @@
+body {
+  background-color: #583d72;
+}
+
+.container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+  height: 100vh;
+}
+
+.container:active #messages :last-child {
+  background-color: #fff;
+  transition: 0.05s all;
+}
+
+button {
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  height: 40%;
+  background-color: #ff8e71;
+  height: 50px;
+  width: 100px;
+  border-radius: 5px;
+  border-color: #000;
+  border-width: 3px;
+  font-size: 1.2em;
+  margin: 20px;
+}
+
+button:active {
+  background-color: #fff;
+  box-shadow: 2px 2px black;
+  outline: none;
+}
+
+button:focus {
+  outline: none;
+}
+
+#messages {
+  width: 90%;
+  font-size: 2em;
+  padding: 20px;
+  text-align: center;
+  margin-top: 50px;
+  color: #ffba93;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  -ms-flex-align: center;
+      align-items: center;
+  transition: 1s all;
+}
+
+#messages :last-child {
+  width: 100%;
+  height: 2.5em;
+  background-color: #9f5f80;
+  border-radius: 10px;
+  color: #000;
+  line-height: 2.5em;
+}
+
+#messages div {
+  padding: 20px;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,3 +1,4 @@
+{
 function playGame(playerInput) {
   clearMessages()
   function getMoveName(argMoveId){
@@ -12,18 +13,19 @@ function playGame(playerInput) {
     return 'nieznany ruch';
   }
 
+// Losowanie liczby od 1 do 3
 
-  let randomNumber = Math.floor(Math.random() * 3 + 1);
+  const randomNumber = Math.floor(Math.random() * 3 + 1);
 
   console.log('Wylosowana liczba to: ' + randomNumber);
 
-  let argComputerMove = getMoveName(randomNumber);
+// Nazwa ruchu 
 
-  // let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+  const argComputerMove = getMoveName(randomNumber),
+    argPlayerMove = getMoveName(playerInput);
+  console.log('Gracz wybrsał: ' + playerInput);
 
-  console.log('Gracz wpisał: ' + playerInput);
-
-  let argPlayerMove = getMoveName(playerInput);
+  
 
 
   function displayResult(argComputerMove, argPlayerMove){
@@ -34,8 +36,6 @@ function playGame(playerInput) {
       printMessage('Ty wygrywasz!');
     } else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
       printMessage('Ty wygrywasz!');
-    // } else if( argComputerMove == argPlayerMove){
-    //   printMessage('Remis!');
     } else {
       printMessage('Tym razem przegrywasz :(');
     }
@@ -66,11 +66,4 @@ document.getElementById('play-paper').addEventListener('click', function(){
 document.getElementById('play-scissors').addEventListener('click', function(){
   playGame(3);
 });
-
-(document).ready(function() {
-  ('#messages').active(function() {
-    $('button').css('background-color', 'blue')},
-    function(){
-    ('button').css('background-color', '')
-    })
-})
+}
